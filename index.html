@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101827">
+  <meta name="description" content="Welcome to Sanni Kumar's personal website. Discover his journey, interests, and goals.">
+  <title>Sanni Kumar | Personal Website</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0b1120;--surface:#121c30;--text:#f4f7ff;--muted:#a8b3c9;--accent:#f5c451;--accent-light:#ffe6a0;--border:rgba(255,255,255,.09)}
+    *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--text);font-family:Inter,sans-serif;line-height:1.7}
+    a{color:inherit;text-decoration:none}.container{width:min(1100px,90%);margin:auto}
+    header{position:sticky;top:0;z-index:100;background:rgba(11,17,32,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+    nav{min-height:76px;display:flex;justify-content:space-between;align-items:center;gap:20px}
+    .logo{font-family:Poppins,sans-serif;font-size:1.35rem;font-weight:800}.logo span,h1 span,.highlight{color:var(--accent)}
+    .nav-links{display:flex;gap:24px;list-style:none;font-size:.92rem;color:var(--muted)}.nav-links a:hover{color:var(--accent)}
+    .hero{min-height:650px;display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:55px;padding-top:70px;padding-bottom:70px}
+    .eyebrow{display:inline-block;padding:7px 14px;border:1px solid rgba(245,196,81,.3);background:rgba(245,196,81,.08);border-radius:30px;color:var(--accent-light);font-size:.82rem;margin-bottom:22px}
+    h1,h2,h3{font-family:Poppins,sans-serif;line-height:1.25}h1{font-size:clamp(2.6rem,6vw,4.8rem);letter-spacing:-2px;margin-bottom:20px}
+    .hero p{max-width:570px;color:var(--muted);font-size:1.05rem;margin-bottom:28px}
+    .buttons{display:flex;flex-wrap:wrap;gap:13px}.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 22px;border-radius:9px;font-weight:700;transition:.25s}
+    .btn-primary{background:var(--accent);color:#101827}.btn-primary:hover{background:var(--accent-light);transform:translateY(-2px)}
+    .btn-secondary{border:1px solid var(--border)}.btn-secondary:hover{border-color:var(--accent);color:var(--accent)}
+    .hero-card{padding:35px;border:1px solid var(--border);border-radius:24px;background:linear-gradient(145deg,#192640,#101827);box-shadow:0 25px 70px rgba(0,0,0,.22);text-align:center}
+    .avatar{width:155px;height:155px;margin:0 auto 24px;display:grid;place-items:center;border-radius:50%;border:3px solid var(--accent);background:linear-gradient(135deg,#283b5e,#121c30);color:var(--accent);font-family:Poppins,sans-serif;font-size:3.2rem;font-weight:800}
+    .hero-card h2{font-size:1.5rem;margin-bottom:8px}.hero-card p{font-size:.94rem;margin-bottom:0}
+    .small-label{color:var(--accent);text-transform:uppercase;font-size:.76rem;letter-spacing:2px;font-weight:700;margin-bottom:12px}
+    section{padding:85px 0;border-top:1px solid var(--border)}.section-heading{max-width:650px;margin-bottom:38px}
+    .section-heading h2{font-size:clamp(2rem,4vw,2.8rem);margin-bottom:14px}.section-heading p,.card p,.interest-card p,.journey-card p{color:var(--muted)}
+    .about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:28px}.card{background:var(--surface);border:1px solid var(--border);border-radius:17px;padding:28px}
+    .card h3{margin-bottom:13px;font-size:1.2rem}.info-list{list-style:none;display:grid;gap:14px}
+    .info-list li{display:flex;justify-content:space-between;gap:15px;border-bottom:1px solid var(--border);padding-bottom:12px}
+    .info-list li:last-child{border-bottom:none;padding-bottom:0}.info-list span:first-child{color:var(--muted)}.info-list span:last-child{text-align:right;font-weight:600}
+    .interest-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.interest-card{background:var(--surface);border:1px solid var(--border);border-radius:17px;padding:27px;transition:.25s}
+    .interest-card:hover{transform:translateY(-5px);border-color:rgba(245,196,81,.5)}.icon{width:52px;height:52px;display:grid;place-items:center;background:rgba(245,196,81,.1);border-radius:13px;font-size:1.5rem;margin-bottom:20px}
+    .interest-card h3{margin-bottom:10px;font-size:1.15rem}.interest-card p{font-size:.94rem}
+    .journey{display:grid;grid-template-columns:1fr 1fr;gap:28px}.journey-card{padding:30px;border-radius:18px;background:var(--surface);border:1px solid var(--border)}
+    .journey-card .number{color:var(--accent);font-size:.85rem;font-weight:800;letter-spacing:1.5px;margin-bottom:13px}.journey-card h3{font-size:1.3rem;margin-bottom:12px}
+    .quote-section{text-align:center;background:linear-gradient(135deg,rgba(245,196,81,.07),transparent)}.quote-section h2{font-size:clamp(1.8rem,4vw,2.7rem);max-width:780px;margin:0 auto 18px}.quote-section p{color:var(--muted)}
+    .mantra-card{max-width:800px;margin:auto;padding:38px 25px;text-align:center;background:var(--surface);border:1px solid rgba(245,196,81,.25);border-radius:20px}
+    .mantra-card h2{color:var(--accent);font-size:1.8rem;margin-bottom:22px}.mantra{font-family:serif;font-size:clamp(1.25rem,3vw,1.8rem);line-height:2;color:var(--accent-light);margin-bottom:18px}
+    .translation{color:var(--muted);max-width:610px;margin:auto;font-size:.94rem}
+    footer{padding:32px 0 20px;border-top:1px solid var(--border);text-align:center}footer p{color:var(--muted);font-size:.9rem}.credit{color:var(--accent);margin-top:10px;font-size:.85rem}
+    @media(max-width:800px){.hero{grid-template-columns:1fr;gap:35px;min-height:auto}.hero-card{max-width:480px;width:100%;margin:auto}.about-grid,.journey{grid-template-columns:1fr}.interest-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:560px){nav{padding:15px 0;align-items:flex-start;flex-direction:column}.nav-links{width:100%;gap:17px;flex-wrap:wrap;font-size:.83rem}.hero{padding-top:55px;padding-bottom:55px}h1{letter-spacing:-1px}section{padding:65px 0}.interest-grid{grid-template-columns:1fr}.card,.interest-card,.journey-card{padding:23px}.info-list li{font-size:.9rem}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <header><nav class="container" aria-label="Main navigation">
+    <a href="#home" class="logo">SANNI<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li><li><a href="#about">About Me</a></li><li><a href="#interests">Interests</a></li><li><a href="#journey">My Journey</a></li><li><a href="#mantra">Gayatri Mantra</a></li>
+    </ul>
+  </nav></header>
+  <main>
+    <section class="container hero" id="home">
+      <div>
+        <div class="eyebrow">Welcome to My Personal Website</div>
+        <h1>Hello, I'm <span>Sanni Kumar.</span></h1>
+        <p>I am a student, a learner, and someone who believes in improving a little every day. I am exploring technical skills, NCC training, and creative video making while working towards my future goals.</p>
+        <div class="buttons"><a href="#about" class="btn btn-primary">Know More About Me</a><a href="#journey" class="btn btn-secondary">My Journey</a></div>
+      </div>
+      <div class="hero-card"><div class="avatar" aria-label="Sanni Kumar initials">SK</div><div class="small-label">My Introduction</div><h2>Sanni Kumar</h2><p>Learning with purpose, building new skills, and moving forward with dedication.</p></div>
+    </section>
+    <section id="about"><div class="container">
+      <div class="section-heading"><div class="small-label">A Little About Me</div><h2>My Story, <span class="highlight">My Way.</span></h2><p>Every person has a different journey. Mine is about learning, staying focused, and becoming better through experience.</p></div>
+      <div class="about-grid">
+        <div class="card"><h3>Who Am I?</h3><p>My name is Sanni Kumar. I am pursuing technical education in the Fitter trade at ITI. I am interested in learning practical skills and understanding how things work. Along with my studies, I am exploring NCC, technology, and video creation.</p><br><p>I believe that success comes from patience, discipline, continuous learning, and consistent effort. I may still have many things to learn, but I am ready to keep moving forward.</p></div>
+        <div class="card"><h3>Quick Introduction</h3><ul class="info-list">
+          <li><span>Name</span><span>Sanni Kumar</span></li><li><span>Education</span><span>ITI Student</span></li><li><span>Trade</span><span>Fitter</span></li><li><span>Interests</span><span>Technology &amp; Creativity</span></li><li><span>Goal</span><span>Learn and Grow</span></li>
+        </ul></div>
+      </div>
+    </div></section>
+    <section id="interests"><div class="container">
+      <div class="section-heading"><div class="small-label">What I Like</div><h2>My <span class="highlight">Interests.</span></h2><p>These are some of the areas I want to explore, practise, and improve in over time.</p></div>
+      <div class="interest-grid">
+        <article class="interest-card"><div class="icon" aria-hidden="true">🔧</div><h3>Technical Skills</h3><p>Learning about tools, machines, workshop practices, and practical skills through my ITI Fitter training.</p></article>
+        <article class="interest-card"><div class="icon" aria-hidden="true">🎖️</div><h3>NCC &amp; Discipline</h3><p>Developing discipline, teamwork, confidence, leadership, and a sense of responsibility through NCC learning.</p></article>
+        <article class="interest-card"><div class="icon" aria-hidden="true">🎬</div><h3>Video Creation</h3><p>Learning mobile video editing, storytelling, and documentary creation to share useful information with people.</p></article>
+        <article class="interest-card"><div class="icon" aria-hidden="true">💻</div><h3>Technology</h3><p>Exploring digital tools, useful applications, and new technologies that can help me learn and create.</p></article>
+        <article class="interest-card"><div class="icon" aria-hidden="true">📚</div><h3>Learning</h3><p>Improving my knowledge step by step and learning new things that can help me in my studies and future career.</p></article>
+        <article class="interest-card"><div class="icon" aria-hidden="true">🌱</div><h3>Self-Improvement</h3><p>Building better habits, staying focused on my goals, and becoming more confident through regular practice.</p></article>
+      </div>
+    </div></section>
+    <section id="journey"><div class="container">
+      <div class="section-heading"><div class="small-label">Where I Am Going</div><h2>My Learning <span class="highlight">Journey.</span></h2><p>I know that learning takes time. My aim is to make progress one step at a time rather than trying to achieve everything at once.</p></div>
+      <div class="journey">
+        <article class="journey-card"><div class="number">01 — PRESENT</div><h3>Building My Foundation</h3><p>My current focus is on technical education, practical skills, NCC preparation, and learning how to use digital tools effectively.</p></article>
+        <article class="journey-card"><div class="number">02 — FUTURE</div><h3>Growing My Skills</h3><p>I want to continue learning, improve my communication, create meaningful videos, and explore opportunities that match my interests and abilities.</p></article>
+      </div>
+    </div></section>
+    <section class="quote-section"><div class="container"><div class="small-label">My Belief</div><h2>“Small steps every day can lead to <span class="highlight">big changes over time.</span>”</h2><p>Stay curious. Stay disciplined. Keep learning.</p></div></section>
+    <section id="mantra"><div class="container"><div class="mantra-card">
+      <div class="small-label">A Prayer for Wisdom</div><h2>Gayatri Mantra</h2>
+      <p class="mantra" lang="sa">ॐ भूर्भुवः स्वः।<br>तत्सवितुर्वरेण्यं भर्गो देवस्य धीमहि।<br>धियो यो नः प्रचोदयात्॥</p>
+      <p class="translation">Meaning: We meditate upon the divine light of the Supreme Being. May that divine light guide our thoughts towards wisdom and understanding.</p>
+    </div></div></section>
+  </main>
+  <footer><div class="container"><p>Thank you for visiting my personal website.</p><p>Keep learning, stay positive, and believe in your journey.</p><p class="credit">built with ❤️ by 21.coders</p></div></footer>
+</body>
+</html>
